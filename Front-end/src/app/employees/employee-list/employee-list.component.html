@@ -1,0 +1,54 @@
+<div class="container">
+  <div class="header"></div>
+  <div> <a href="/employeeadd"
+    class="btn btn-sm btn-info" >
+    Add Employee
+  </a></div>
+  <table class="table table-bordered table-striped">
+    <thead>
+      <tr>
+        <th>visitor Id</th>
+        <th>Customer Name</th>
+        <th>Contact Person</th>
+        <th>Contact Number</th>
+        <th>Interest Product</th>
+        <th>Visit subject</th>
+        <th>Description</th>
+        <th>Is Disabled</th>
+        <th>Is Deleted</th>
+        <th>Emp Id</th>
+      </tr>
+    </thead>
+
+    <tr *ngFor="let employee of employeeService.employees">
+      <td (click)="populateForm(employee)">{{ employee.visitId }}</td>
+      <td (click)="populateForm(employee)">{{ employee.cust_name }}</td>
+      <td (click)="populateForm(employee)">{{ employee.contact_person }}</td>
+      <td (click)="populateForm(employee)">{{ employee.contact_no }}</td>
+      <td (click)="populateForm(employee)">{{ employee.interest_product }}</td>
+      <td (click)="populateForm(employee)">{{ employee.visit_subject }}</td>
+      <td (click)="populateForm(employee)">{{ employee.description}}</td>
+      <td (click)="populateForm(employee)">{{ employee.is_disabled }}</td>
+      <td (click)="populateForm(employee)">{{ employee.is_deleted }}</td>
+      <td (click)="populateForm(employee)">{{ employee.emp_id }}</td>
+      <td>
+        <button
+          class="btn btn-sm btn-info"
+          (click)="updateEmployee(employee.visitId)"
+        >
+          E
+        </button>
+      </td>
+    </tr>
+  </table>
+</div>
+<!--  visitId: number = 0;
+ cust_name: String = '';
+ contact_person: string = '';
+ contact_no: number = 0;
+ interest_product: string = '';
+ visit_subject: string = '';
+ description: string = '';
+ is_disabled:boolean;
+ is_deleted:boolean;
+ emp_id:number=0; -->
